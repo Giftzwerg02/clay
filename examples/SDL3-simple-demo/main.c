@@ -161,7 +161,8 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
             Clay_SetLayoutDimensions((Clay_Dimensions) { (float) event->window.data1, (float) event->window.data2 });
             break;
         case SDL_EVENT_MOUSE_WHEEL:
-            state->mouseWheel = (Clay_Vector2) { event->wheel.x, event->wheel.y };
+            state->mouseWheel.x = event->wheel.x;
+            state->mouseWheel.y = event->wheel.y;
             break;
         default:
             break;
